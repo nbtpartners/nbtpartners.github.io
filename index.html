@@ -8,35 +8,37 @@ permalink: /
     <div class="container">
         <div class="row centered">
             <div class="col-md-4">
-                <i class="fa fa-trello"></i>
+                <i class="fa fa-globe"></i>
                 <h4>비전</h4>
-                <p>칸반은 시각적 보드와 가상 칸반 시스템을 사용해서 서비스를 점진적으로 개선하는 관리 방법입니다. 칸반은 서비스 출시를 개선하는 방법을 설명하고 있으며, 이미 완벽하게 정의되어 있고, 반복해서 사용할 수 있을만큼 충분한 세부 사항도 갖추고 있습니다. 엔비티는 칸반을 사용하여 캐시슬라이드 개발에서 영속적이고 효과적인 변화를 이끌어 내고 있습니다.</p>
-                <p><br/><a href="#" class="btn btn-theme">더 보기</a></p>
+                <p>비전은 조직의 미래를 만들어냅니다. 비전이 있다면 지금 어디에 있는지 그리고 어디로 가고자 하는지 잊지 않을 수 있습니다.<br>NBT 개발 조직에서는 우리가 궁극적으로 달성하고자 하는 가치, 그 가치를 달성하기 위한 원칙, 그리고 그 가치를 이루기 위한 최선의 방법을 선택하는 일이 모두 중요하다고 생각합니다.</p>
+                <p><br/><a href="{{ "/vision/" | prepend: site.baseurl }}" class="btn btn-theme">더 보기</a></p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-mobile"></i>
+                <h4>캐시슬라이드</h4>
+                <p>우리는 지금 높이 날고있는 비행기 위에서, 비행 상태를 유지하면서 동시에 더 멋지고 안전한 비행기로 바꾸기 위해 노력하고 있습니다.<br>(여기에 방대한 시스템을 다루고 있다는 느낌을 주는 정량 지표 몇가지를 추가)</p>
+                <p><br/><a href="{{ "/engineering/" | prepend: site.baseurl }}" class="btn btn-theme">더 보기</a></p>
             </div>
             <div class="col-md-4">
                 <i class="fa fa-users"></i>
-                <h4>클래스 & 파티</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p><br/><a href="#" class="btn btn-theme">더 보기</a></p>
-            </div>
-            <div class="col-md-4">
-                <i class="fa fa-heart-o"></i>
-                <h4>업무 공간</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p><br/><a href="#" class="btn btn-theme">더 보기</a></p>
+                <h4>개발 문화</h4>
+                <p>우리는 지속적으로 성장하는 조직에서 일하기를 원합니다. 그리고 우리도 소프트웨어 엔지니어로써 조직과 함께 성장하고 싶습니다. 그 모든 것의 열쇠는 바로 개발 문화입니다.</p>
+                <p><br/><a href="{{ "/culture/" | prepend: site.baseurl }}" class="btn btn-theme">더 보기</a></p>
             </div>
         </div>
     </div><! --/container -->
 </div><! --/service -->
 
-{% include portfolio.html title="PHOTOS" limit=10 %}
+{% include portfolio.html title="아래는 다양한 사진들로 교체해야 함" limit=10 %}
 
 <div class="container mtb">
     <div class="row">
         <div class="col-lg-5 col-lg-offset-1">
-            <h4>칸반</h4>
-            <p>{{ site.about }}</p>
-            <p><br/><a href="{{ "/about/" | prepend: site.baseurl }}" class="btn btn-theme">더 보기</a></p>
+          <h4>최근 글</h4>
+          <div class="hline"></div>
+          {% for post in site.categories['blog'] limit:5 %}
+              <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}.</a></p>
+          {% endfor %}
         </div>
 
         <!--<div class="col-lg-3">
@@ -48,11 +50,9 @@ permalink: /
         </div>-->
 
         <div class="col-lg-5">
-            <h4>최근 글</h4>
-            <div class="hline"></div>
-            {% for post in site.categories['blog'] limit:5 %}
-                <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}.</a></p>
-            {% endfor %}
+            <h4>채용</h4>
+            <p>{{ site.recruit }}</p>
+            <p><br/><a href="{{ "/recruit/" | prepend: site.baseurl }}" class="btn btn-theme">더 보기</a></p>
         </div>
 
     </div><! --/row -->
